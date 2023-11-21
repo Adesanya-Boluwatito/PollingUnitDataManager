@@ -39,10 +39,8 @@ def store_results():
         selected_party = request.form.get('party')
         results = request.form.get('result')
 
-        # Create a cursor to interact with the database
         cursor = mydb.cursor()
-
-        # Create the table if it doesn't exist (you may want to do this separately)
+        
         create_table_query = """
         CREATE TABLE IF NOT EXISTS pu_results (
             polling_unit_id INT PRIMARY KEY,
@@ -51,18 +49,15 @@ def store_results():
         """.format(' INT, '.join(parties_names()) + ' INT')
         cursor.execute(create_table_query)
 
-        # Insert the result into the database for the selected party
+        
         insert_query = f"""
     INSERT INTO pu_resultsgit
     (polling_unit_id, {selected_party}, {', '.join(parties_names())})
     VALUES (%s, %s, {', '.join(['%s'] * len(parties_names()))});
 """
-
-
-        # Commit the changes
+    values = [polling_unit_id, request.form.get(selected_party)] + [request.form.get(party, 0) for party in parties_names()]
+    cursor.execute(insert_query, values)
         mydb.commit()
-
-        # Close the cursor
         cursor.close()
 
         return "Result stored successfully!"
