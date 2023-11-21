@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Results</title>
+</head>
+<body>
+    <h1>Total Results for {{ local_government }}</h1>
+
+    {% if total_result is not none %}
+        <p>Total Result: {{ total_result }}</p>
+    {% else %}
+        <p>No results found for the specified Local Government.</p>
+    {% endif %}
+</body>
+</html>

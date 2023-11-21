@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit Results</title>
+</head>
+<body>
+    <h1>Enter Polling ID</h1>
+
+    <form method="post" action="{{ url_for('polling_unit_results') }}">
+        <label for="polling_id">Polling Unit Result_ID:</label>
+        <input type="text" id="polling_id" name="polling_id" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

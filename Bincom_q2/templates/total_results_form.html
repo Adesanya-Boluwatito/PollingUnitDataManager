@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Results by Local Government</title>
+
+    <style>
+        #local_government {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Local Government</h1>
+
+    <form method="post" action="{{ url_for('total_results') }}">
+        <label for="local_government">Local Government:</label>
+        <select name="local_government" id="local_government" required>
+            {% for lg in local_governments %}
+                <option value="{{ lg }}">{{ lg }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

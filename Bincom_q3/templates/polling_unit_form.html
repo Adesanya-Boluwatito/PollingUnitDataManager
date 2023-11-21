@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Unit Results Form</title>
+</head>
+<body>
+    <h1>Polling Unit Results Form</h1>
+
+    <form method="post" action="{{ url_for('store_results') }}">
+        <label for="polling_unit_id">Polling Unit ID:</label>
+        <input type="text" id="polling_unit_id" name="polling_unit_id" required>
+
+        <label for="party">Select Party:</label>
+        <select id="party" name="party" required>
+            {% for party in parties %}
+                <option value="{{ party }}">{{ party }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="result">Result:</label>
+        <input type="number" name="result" id="result" required>
+
+
+        <button type="submit">Submit Result</button>
+    </form>
+</body>
+</html>
