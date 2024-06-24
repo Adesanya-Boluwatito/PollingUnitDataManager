@@ -2,7 +2,7 @@
 
 PollingUnitDataManager is a collection of Flask applications designed to interact with a MySQL database for managing and displaying polling unit data. Each application within this repository serves a unique purpose, from fetching results to storing and displaying data. This project includes three main applications:
 
-1. **PollingUnitResultManager**
+1. **PollingUnitResultFetcher**
 2. **PollingUnitResultsAnalyzer**
 3. **PollingUnitResultsFetcher**
 
@@ -50,7 +50,7 @@ PollingUnitDataManager is a collection of Flask applications designed to interac
 
 ## Applications Overview
 
-### 1. PollingUnitResultsFetcher
+### 1. PollingUnitResultFetcher
 
 **Description**: This application fetches and displays results for specific polling units based on their IDs. It provides a simple web interface to input a polling unit ID and retrieve its corresponding results.
 
@@ -62,7 +62,7 @@ PollingUnitDataManager is a collection of Flask applications designed to interac
 #### Functions
 - `get_polling_unit_results(polling_id)`: Fetches and returns the results for a specified polling unit ID.
 
-### 2. LocalGovernmentResultsAggregator
+### 2. PollingUnitResultsAnalyzer
 
 **Description**: This application aggregates and displays the total results by local government. It sums the results of each polling unit within a local government and provides a web interface to view these results.
 
@@ -78,7 +78,7 @@ PollingUnitDataManager is a collection of Flask applications designed to interac
 - `get_total_result_by_local_government(lga)`: Retrieves total results for a specified local government.
 - `get_local_governments()`: Returns a list of local governments.
 
-### 3. PollingUnitResultsStorer
+### 3. PollingUnitResultsManager
 
 **Description**: This application stores polling unit results in a structured format within the database. It provides a web interface to input and store results for different parties.
 
