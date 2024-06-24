@@ -3,8 +3,8 @@
 PollingUnitDataManager is a collection of Flask applications designed to interact with a MySQL database for managing and displaying polling unit data. Each application within this repository serves a unique purpose, from fetching results to storing and displaying data. This project includes three main applications:
 
 1. **PollingUnitResultManager**
-2. ****
-3. **PollingUnitResultsStorer**
+2. **PollingUnitResultsAnalyzer**
+3. **PollingUnitResultsFetcher**
 
 ## Features
 
